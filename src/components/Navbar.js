@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Button } from "./Button"
 import './Navbar.css'
@@ -18,6 +18,10 @@ const Navbar = () => {
       setButton(true)
     }
   }
+
+  useEffect(() => {
+    showButton()
+  }, [])
 
   window.addEventListener('resize', showButton)
 
